@@ -1,19 +1,77 @@
+/* Remove margins and padding from the list */
+/* Include the padding and border in an element's total width and height */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  min-width: 250px;
+}
+
+/* Style the card header */
+.card-header {
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  background-color: #007bff;
+}
+
+/* Style the list items */
+ul div {
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+/* Zebra striped table */
+ul div:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul div:hover {
+  background: #ddd;
+}
+
+.todo-item {
+  flex-grow: 1;
+  padding-right: 1rem;
+}
+
+/* Style deleted todo*/
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
 }
 
-.todo {
-  display: flex;
+/* Style the complete and close button */
+.todo-complete,
+.todo-trash {
+  cursor: pointer;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: .625rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.todo-complete {
+  margin-right: 2px;
 }
 
 .fa-check,
 .fa-trash {
   pointer-events: none;
 }
+
+::placeholder {
+  font-style: italic;
